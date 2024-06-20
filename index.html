@@ -1,70 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- bagian head untuk mengisi title dan link css -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rafly Konversi Suhu</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header>
-        <h1>Website Konversi Suhu</h1>
-    </header>
-
-    <main>
-        <p>Masukkan suhu derajat Celcius (&deg;C) ke kotak dibawah, lalu klik tombol Konversi untuk mendapatkan</p>
-
-        <section class="celcius-container">
-            <header>
-                <h3>Celcius (&deg;C)</h3>
-            </header>
+<!-- bagian utama isi konten -->
+<body class="body-container">
+    <!-- bagian berisi semua konten pada website ini -->
+    <main class="container">
+        <!-- bagian judul -->
+        <header>
+            <h2>Konversi Suhu</h2><hr>
+        </header>
+        <!-- bagian paling utama website -->
+        <main>
+            <!-- bagian section dengan menambahkan penjelasan, text box dan tombol suhu Celcius yang akan dirubah ke Fahrenheit -->
             <section>
-                <textarea></textarea>
-                <section>
-                    <button class="button green-color">Konversi</button>
-                    <button class="button red-color">Reset</button>
-                    <button class="button blue-color">Reverse</button>
-                </section>
+                <p>Masukkan suhu derajat Celcius (&deg;C) ke kotak dibawah, lalu klik tombol Konversi untuk mendapatkan hasil konversi dalam bentuk Fahrenheit (&deg;F)</p>
+                <p>Celcius (&deg;C):</p>
+                <input type="text" id="input1" placeholder="Masukkan suhu Celcius" oninput="validateInput(this)">
+                <button onclick="convertToCelsius()">Konversi</button><hr>
             </section>
-        </section>
-        
-        <section class="result-container">
+            <!-- bagian section dengan menambahkan penjelasan, text box dan tombol suhu Fahrenheit yang akan dirubah ke Celcius-->
             <section>
-                <header>
-                    <h3>Farenheit (&deg;F)</h3>
-                </header>
-                <section>
-                    <textarea></textarea>
-                </section>
+                <p>Masukkan suhu derajat Fahrenheit (&deg;F) ke kotak dibawah, lalu klik tombol Konversi untuk mendapatkan hasil konversi dalam bentuk Celcius (&deg;C)</p>
+                <p>Fahrenheit (&deg;F):</p>
+                <input type="text" id="input2" placeholder="Masukkan suhu Fahrenheit" oninput="validateInput(this)">
+                <button onclick="convertToFahrenheit()">Reverse</button><hr>
             </section>
-            
+            <!-- bagian section untuk melihat cara penghitungan atau hasil kalkulasi dari perubahan suhu Celcius ke Fahrenheit maupun sebaliknya -->
             <section>
-                <header>
-                    <h3>Converistion Calculate</h3>
-                </header>
-                <section>
-                    <textarea></textarea>
-                </section>
+                <p>Cara kalkulasi:</p>
+                <div class="result" id="calculationDetails"></div>
             </section>
-        </section>
-
-        
-        <hr>
-        <section>
-            <header>
-                <h1>Cara konversi calcius ke farenheit</h1>
-            </header>
-            <p>suhu <span class="subject-info">S</span> dalam derajat farenheit sama dengan suhu dalam derajatt celcius</p>
-            <p>
-                <span class="subject-info">S</span><sub>(&deg;F)</sub> = (<span class="subject-info">S</span><sub>(&deg;C</sub> x 1.8) + 32
-            </p>
-        </section>
-
-        <section>
-
-        </section>
-    </main>
-
+            <!-- bagian section untuk mendefinisikan tombol reset atau hapus -->
+            <section>
+                <button onclick="resetAll()" style="background-color: palevioletred;">Hapus</button><hr>
+            </section>
+            <!-- bagian section yang berisi penjelasan tentang merubah suhu Celcius ke Fahrenheit -->
+            <section>
+                <h3>Cara Konversi dari Celcius (&deg;C) ke Fahrenheit (&deg;F)</h3>
+                <p>suhu <span class="subject-info">S</span> dalam derajat Fahrenheit (&deg;F) sama dengan suhu <span class="subject-info">S</span> dalam derajatt celcius (&deg;C) kali 9/5 tambah 32</p>
+                <p><span class="subject-info">S</span><sub>(&deg;F)</sub> = (<span class="subject-info">S</span><sub>(&deg;C)</sub> x 9/5) + 32</p>
+                <p>atau</p>
+                <p><span class="subject-info">S</span><sub>(&deg;F)</sub> = (<span class="subject-info">S</span><sub>(&deg;C)</sub> x 1.8) + 32</p>
+            </section>
+        </main>
+    </main> 
+    <!-- link untuk menautkan ke file javascript -->
     <script src="js/script.js"></script>
 </body>
 </html>
